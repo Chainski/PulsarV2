@@ -5,7 +5,7 @@
 		<AssemblyName>Client</AssemblyName>
 		<UseWindowsForms>true</UseWindowsForms>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<Platforms>AnyCPU</Platforms>
+		<Platforms>AnyCPU;x64</Platforms>
 		<Configurations>Debug;Release;ReleaseWithDonut</Configurations>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -15,13 +15,33 @@
 		<DebugSymbols>true</DebugSymbols>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+	  <OutputPath>..\bin\Debug\</OutputPath>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	  <DebugType>portable</DebugType>
+	  <DebugSymbols>true</DebugSymbols>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<DebugType>none</DebugType>
 		<OutputPath>..\bin\Release\</OutputPath>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+	  <DebugType>none</DebugType>
+	  <OutputPath>..\bin\Release\</OutputPath>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithDonut|AnyCPU'">
+	  <DebugType>none</DebugType>
+	  <OutputPath>..\bin\Release\</OutputPath>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	  <PlatformTarget>AnyCPU</PlatformTarget>
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithDonut|x64'">
 	  <DebugType>none</DebugType>
 	  <OutputPath>..\bin\Release\</OutputPath>
 	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -36,6 +56,7 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<DeferredAssembliesDestination>$(MSBuildProjectDirectory)\..\Pulsar.Server\DeferredAssemblies</DeferredAssembliesDestination>
+		<PlatformTarget>x64</PlatformTarget>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(SolutionDir)' != ''">
 		<DeferredAssembliesDestination>$(SolutionDir)Pulsar.Server\DeferredAssemblies</DeferredAssembliesDestination>
